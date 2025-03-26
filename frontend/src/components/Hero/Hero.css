@@ -1,0 +1,92 @@
+.hero img {
+  width: 3in; /* 2 inches wide */
+  height: 3in; /* 2 inches tall */
+  border: 1px solid #000; /* Optional: border to visualize the photo size */
+  object-fit: cover; /* Ensures the image covers the specified area */
+  border-radius: 50%; /* Rounded corners, adjust as needed */
+}
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.hero h1 {
+  text-align: center;
+  width: 70%;
+  font-size: 60px;
+  font-weight: 600;
+}
+.hero h1 span {
+  background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
+  background-clip: text;
+  -webkit-backdrop-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p {
+  width: 50%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 40px;
+}
+.hero-action {
+  display: flex;
+  gap: 40px;
+  gap: 25px;
+  font-size: 24px;
+  font-weight: 500;
+  /* if not give this then this will touc the bottom so given bottom margi then not same in footer one class main div give flex all will be horizontal thats why we give div inside left right and center and then give mian css then that all item in flex and aplly any div flex for inner styling */
+  margin-bottom: 50px;
+}
+.hero-connect {
+  padding: 25px 45px;
+  border-radius: 30px;
+  background: linear-gradient(164deg, #df8908 -5.09%, #b415ff 106.28%);
+  cursor: pointer;
+  font-size: 20px;
+}
+.hero-resume {
+  padding: 25px 75px;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+.hero-resume:hover {
+  border-color: #b415ff;
+}
+.hero-connect:hover {
+  border: 2px solid white;
+}
+@media (max-width: 768px) {
+  .hero img {
+    margin-top: 120px;
+    width: 260px;
+  }
+  .hero h1 {
+    margin-top: 50px;
+    width: 90%;
+    font-size: 50px;
+  }
+  .hero p {
+    width: 60%;
+    font-size: 18px;
+    line-height: 32px;
+    margin: 10px 0px;
+  }
+  .hero-action {
+    gap: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+  .hero-connect {
+    padding: 20px 30px;
+    border-radius: 40px;
+  }
+  .hero-resume {
+    padding: 20px 50px;
+    border-radius: 40px;
+  }
+}
