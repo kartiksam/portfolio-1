@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.css";
 import profile_img from "../../assets/profile_img.png";
-import resume from "../../assets/kartik_resume.pdf";
+import resume from "../../assets/kartik sharma_Resume .pdf";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 const Hero = () => {
   return (
