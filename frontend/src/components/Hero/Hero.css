@@ -1,92 +1,240 @@
-.hero img {
-  width: 3in; /* 2 inches wide */
-  height: 3in; /* 2 inches tall */
-  border: 1px solid #000; /* Optional: border to visualize the photo size */
-  object-fit: cover; /* Ensures the image covers the specified area */
-  border-radius: 50%; /* Rounded corners, adjust as needed */
-}
 .hero {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 35px;
+  gap: clamp(25px, 5vw, 50px);
+  padding: clamp(60px, 15vw, 120px) clamp(20px, 5vw, 50px) clamp(40px, 8vw, 80px);
+  text-align: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.hero img {
+  width: clamp(200px, 25vw, 300px);
+  height: clamp(200px, 25vw, 300px);
+  border: 3px solid #df8908;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(223, 137, 8, 0.3);
+}
+
+.hero img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(223, 137, 8, 0.4);
 }
 
 .hero h1 {
-  text-align: center;
-  width: 70%;
-  font-size: 60px;
-  font-weight: 600;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  max-width: clamp(300px, 80vw, 800px);
 }
+
 .hero h1 span {
   background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
   background-clip: text;
-  -webkit-backdrop-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
+
 .hero p {
-  width: 50%;
-  text-align: center;
-  font-size: 24px;
-  line-height: 40px;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.6;
+  max-width: clamp(280px, 70vw, 600px);
+  margin: 0 auto;
+  color: #d8d8d8;
+  font-weight: 400;
 }
+
 .hero-action {
   display: flex;
-  gap: 40px;
-  gap: 25px;
-  font-size: 24px;
-  font-weight: 500;
-  /* if not give this then this will touc the bottom so given bottom margi then not same in footer one class main div give flex all will be horizontal thats why we give div inside left right and center and then give mian css then that all item in flex and aplly any div flex for inner styling */
-  margin-bottom: 50px;
+  gap: clamp(20px, 4vw, 40px);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: clamp(20px, 4vw, 40px);
 }
+
 .hero-connect {
-  padding: 25px 45px;
-  border-radius: 30px;
+  padding: clamp(15px, 3vw, 25px) clamp(25px, 5vw, 45px);
+  border-radius: 50px;
   background: linear-gradient(164deg, #df8908 -5.09%, #b415ff 106.28%);
   cursor: pointer;
-  font-size: 20px;
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  white-space: nowrap;
+  box-shadow: 0 5px 15px rgba(223, 137, 8, 0.3);
 }
-.hero-resume {
-  padding: 25px 75px;
-  border-radius: 30px;
-  border: 2px solid #fff;
-  cursor: pointer;
-  font-size: 20px;
-}
-.hero-resume:hover {
-  border-color: #b415ff;
-}
+
 .hero-connect:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(223, 137, 8, 0.4);
   border: 2px solid white;
 }
-@media (max-width: 768px) {
-  .hero img {
-    margin-top: 120px;
-    width: 260px;
+
+.hero-resume {
+  padding: clamp(15px, 3vw, 25px) clamp(30px, 6vw, 75px);
+  border-radius: 50px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+  white-space: nowrap;
+}
+
+.hero-resume:hover {
+  border-color: #b415ff;
+  background: rgba(180, 21, 225, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(180, 21, 225, 0.3);
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hero {
+    padding: clamp(80px, 12vw, 100px) clamp(30px, 6vw, 60px) clamp(50px, 6vw, 70px);
   }
-  .hero h1 {
-    margin-top: 50px;
-    width: 90%;
-    font-size: 50px;
-  }
-  .hero p {
-    width: 60%;
-    font-size: 18px;
-    line-height: 32px;
-    margin: 10px 0px;
-  }
+  
   .hero-action {
-    gap: 40px;
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 50px;
+    gap: 30px;
   }
-  .hero-connect {
-    padding: 20px 30px;
-    border-radius: 40px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hero {
+    padding: clamp(80px, 15vw, 100px) clamp(15px, 4vw, 30px) clamp(30px, 6vw, 50px);
+    gap: clamp(20px, 4vw, 35px);
   }
+  
+  .hero img {
+    margin-top: 60px;
+    width: clamp(180px, 40vw, 260px);
+    height: clamp(180px, 40vw, 260px);
+  }
+  
+  .hero h1 {
+    margin-top: 20px;
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  
+  .hero p {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  
+  .hero-action {
+    gap: clamp(15px, 3vw, 25px);
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .hero-connect,
   .hero-resume {
-    padding: 20px 50px;
-    border-radius: 40px;
+    width: 100%;
+    text-align: center;
+    padding: clamp(12px, 3vw, 18px) clamp(20px, 4vw, 30px);
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .hero {
+    padding: 70px 15px 30px;
+    gap: 25px;
+  }
+  
+  .hero img {
+    width: 160px;
+    height: 160px;
+    margin-top: 50px;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+    margin-top: 15px;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .hero-action {
+    gap: 15px;
+  }
+  
+  .hero-connect,
+  .hero-resume {
+    font-size: 14px;
+    padding: 12px 25px;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+  .hero {
+    padding: 140px 100px 100px;
+    gap: 60px;
+  }
+  
+  .hero h1 {
+    font-size: 5rem;
+  }
+  
+  .hero p {
+    font-size: 1.6rem;
+  }
+  
+  .hero-action {
+    gap: 50px;
+  }
+  
+  .hero-connect,
+  .hero-resume {
+    font-size: 20px;
+    padding: 30px 60px;
+  }
+}
+
+/* Landscape Mobile Styles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    padding: 60px 20px 30px;
+    gap: 20px;
+    min-height: auto;
+  }
+  
+  .hero img {
+    width: 120px;
+    height: 120px;
+    margin-top: 20px;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+  }
+  
+  .hero-action {
+    flex-direction: row;
+    gap: 15px;
   }
 }

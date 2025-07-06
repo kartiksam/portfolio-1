@@ -3,85 +3,251 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 80px;
-  margin: 80px 170px;
+  gap: clamp(40px, 8vw, 80px);
+  padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 170px);
+  min-height: 100vh;
 }
+
 .my-work-title {
   position: relative;
+  text-align: center;
+  width: 100%;
 }
+
 .my-work-title h1 {
-  padding: 0px 30px;
-  font-size: 50px;
-  font-weight: 600;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  margin: 0;
+  padding: 0 clamp(10px, 2vw, 30px);
+  line-height: 1.2;
 }
+
 .my-work-title img {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -10px;
+  right: clamp(-20px, -3vw, 0px);
   z-index: -1;
+  width: clamp(80px, 15vw, 150px);
+  height: auto;
 }
+
 .mywork-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(25px, 5vw, 50px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 .mywork-container img {
-  box-sizing: border-box;
-  width: 350px;
-  height: 280px;
-  transition: 0.3s;
+  width: 100%;
+  height: clamp(200px, 25vw, 280px);
+  object-fit: cover;
+  border-radius: 15px;
+  transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
 .mywork-container img:hover {
-  transform: scale(1.1);
-  border: 4px solid #ff00ff;
-  border-radius: 10px;
-  transition: 0.3s;
+  transform: scale(1.05);
+  border: 3px solid #df8908;
+  box-shadow: 0 20px 40px rgba(223, 137, 8, 0.3);
 }
+
 .mywork-showmore {
   display: flex;
-  gap: 15px;
+  gap: clamp(10px, 2vw, 20px);
+  align-items: center;
+  justify-content: center;
   border-radius: 50px;
   border: 2px solid white;
-  padding: 30px 60px;
-  font-size: 15px;
-  font-weight: 300;
-  margin-bottom: 80px;
-  transition: 0.6s;
+  padding: clamp(20px, 4vw, 40px) clamp(40px, 8vw, 80px);
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
   cursor: pointer;
+  background: transparent;
+  margin-top: clamp(20px, 4vw, 40px);
 }
+
 .mywork-showmore:hover {
-  gap: 30px;
-  transition: 0.6s;
+  gap: clamp(15px, 3vw, 25px);
+  background: rgba(223, 137, 8, 0.1);
+  border-color: #df8908;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(223, 137, 8, 0.3);
 }
-/* one mainm div and indie as many tags all get flexed thats why if we use div with start mid end os that three places content get structured */
+
+.mywork-showmore img {
+  width: clamp(15px, 2vw, 20px);
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.mywork-showmore:hover img {
+  transform: translateX(5px);
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .my-work {
+    padding: clamp(50px, 8vw, 70px) clamp(30px, 6vw, 80px);
+  }
+  
+  .mywork-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .mywork-container img {
+    height: 250px;
+  }
+  
+  .mywork-showmore {
+    padding: 25px 50px;
+  }
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .my-work {
-    gap: 50px;
-    margin: 50px 70px;
-    align-items: start;
+    padding: clamp(40px, 8vw, 60px) clamp(15px, 4vw, 30px);
+    gap: clamp(30px, 6vw, 50px);
+    align-items: flex-start;
   }
+  
   .my-work-title h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
     padding: 0;
-    font-size: 50px;
-    font-weight: 600;
+    text-align: left;
   }
+  
   .my-work-title img {
-    width: 130px;
-    margin-right: -20px;
+    width: clamp(60px, 15vw, 100px);
+    right: -10px;
   }
+  
   .mywork-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(15px, 3vw, 25px);
+  }
+  
+  .mywork-container img {
+    height: clamp(150px, 20vw, 200px);
+  }
+  
+  .mywork-showmore {
+    padding: clamp(15px, 3vw, 25px) clamp(25px, 5vw, 40px);
+    font-size: clamp(14px, 3vw, 16px);
+    margin: clamp(15px, 3vw, 25px) auto 0;
+    width: fit-content;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .my-work {
+    padding: 30px 15px;
+    gap: 25px;
+  }
+  
+  .my-work-title h1 {
+    font-size: 1.8rem;
+  }
+  
+  .my-work-title img {
+    width: 50px;
+    right: -5px;
+  }
+  
+  .mywork-container {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
+  
   .mywork-container img {
-    width: 100%;
-    height: 100%;
+    height: 200px;
   }
+  
+  .mywork-showmore {
+    padding: 15px 30px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+  .my-work {
+    padding: 100px 200px;
+    gap: 100px;
+  }
+  
+  .my-work-title h1 {
+    font-size: 5rem;
+  }
+  
+  .mywork-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+  }
+  
+  .mywork-container img {
+    height: 320px;
+  }
+  
+  .mywork-showmore {
+    padding: 35px 70px;
+    font-size: 20px;
+  }
+}
+
+/* Extra Large Desktop Styles */
+@media (min-width: 1920px) {
+  .mywork-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px;
+  }
+  
+  .mywork-container img {
+    height: 350px;
+  }
+}
+
+/* Landscape Mobile Styles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .my-work {
+    padding: 40px 20px;
+    gap: 30px;
+    min-height: auto;
+  }
+  
+  .mywork-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .mywork-container img {
+    height: 120px;
+  }
+  
   .mywork-showmore {
     padding: 20px 40px;
-    font-size: 18px;
-    margin: 50px auto;
-    cursor: pointer;
+  }
+}
+
+/* Portrait Mobile Styles */
+@media (max-width: 480px) and (orientation: portrait) {
+  .mywork-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .mywork-container img {
+    height: 250px;
   }
 }

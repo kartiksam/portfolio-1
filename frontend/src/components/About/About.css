@@ -3,149 +3,345 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 80px;
-  margin: 80px 170px;
-}
-.about-title {
-  position: relative;
-}
-.about-title h1 {
-  padding: 0px 30px;
-  font-size: 80px;
-  font-weight: 600;
+  gap: clamp(40px, 8vw, 80px);
+  padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 170px);
+  min-height: 100vh;
 }
 
-/* pattern image behind the title */
+.about-title {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.about-title h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  margin: 0;
+  padding: 0 clamp(10px, 2vw, 30px);
+  line-height: 1.2;
+}
+
 .about-title img {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -10px;
+  right: clamp(-20px, -3vw, 0px);
   z-index: -1;
+  width: clamp(80px, 15vw, 150px);
+  height: auto;
 }
-.about-sections .left img {
-  width: 3in; /* 2 inches wide */
-  height: 3in; /* 2 inches tall */
-  border: 1px solid #000; /* Optional: border to visualize the photo size */
-  object-fit: cover; /* Ensures the image covers the specified area */
-  border-radius: 50%; /* Rounded corners, adjust as needed */
-  margin-left: 0%;
-}
+
 .about-sections {
   display: flex;
-  gap: 80px;
+  gap: clamp(40px, 8vw, 80px);
+  width: 100%;
+  max-width: 1200px;
+  align-items: flex-start;
 }
+
+.about-sections .left {
+  flex-shrink: 0;
+}
+
+.about-sections .left img {
+  width: clamp(200px, 25vw, 300px);
+  height: clamp(200px, 25vw, 300px);
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #df8908;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(223, 137, 8, 0.3);
+}
+
+.about-sections .left img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(223, 137, 8, 0.4);
+}
+
 .right {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: clamp(40px, 6vw, 80px);
+  flex: 1;
 }
+
 .para {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  font-size: 24px;
+  gap: clamp(15px, 3vw, 25px);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 500;
+  line-height: 1.6;
+  color: #d8d8d8;
 }
+
 .about-skills {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(15px, 3vw, 25px);
 }
+
 .about-skill {
   display: flex;
-  gap: 50px;
+  gap: clamp(20px, 4vw, 50px);
   align-items: center;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  padding: clamp(10px, 2vw, 20px);
+  border-radius: 10px;
 }
+
+.about-skill:hover {
+  transform: scale(1.02);
+  background: rgba(223, 137, 8, 0.1);
+}
+
 .about-skill p {
-  min-width: 150px;
-  font-size: 24px;
-  font-weight: 500;
+  min-width: clamp(120px, 20vw, 150px);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  margin: 0;
 }
+
 .about-skill hr {
   outline: none;
   border: none;
-  width: 50%;
-  height: 8px;
+  flex: 1;
+  height: clamp(6px, 1vw, 8px);
   border-radius: 50px;
   background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
+  transition: all 0.3s ease;
 }
+
+.about-skill:hover hr {
+  height: clamp(8px, 1.2vw, 10px);
+}
+
 .about-achievements {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(20px, 4vw, 40px);
   width: 100%;
-  justify-content: space-between;
-  margin-bottom: 80px;
+  margin-top: clamp(20px, 4vw, 40px);
 }
+
 .about-achievment {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  transition: 0.5s;
+  gap: clamp(8px, 2vw, 15px);
+  padding: clamp(20px, 4vw, 40px);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  text-align: center;
 }
-/* one main div and if not given div inside then aplly flex to main diuv all ele will flex so thats why we used internal divs as well and give main div to flex so that all data isnide inner div flex and that inside div you can use diff styling */
+
+.about-achievment:hover {
+  transform: translateY(-5px);
+  background: rgba(223, 137, 8, 0.1);
+  box-shadow: 0 10px 30px rgba(223, 137, 8, 0.2);
+}
+
 .about-achievment h1 {
-  font-size: 60px;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 700;
+  margin: 0;
   background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .about-achievment p {
-  font-size: 22px;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   font-weight: 500;
+  margin: 0;
+  color: #d8d8d8;
 }
-.about-skill:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .about {
+    padding: clamp(50px, 8vw, 70px) clamp(30px, 6vw, 80px);
+  }
+  
+  .about-sections {
+    gap: 50px;
+  }
+  
+  .about-sections .left img {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .about-achievements {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-.about-achievment:hover {
-  transform: scale(1.12);
-  transition: 0.5s;
-}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .about {
-    gap: 80px;
-    margin: 50px 70px;
-    align-items: start;
+    padding: clamp(40px, 8vw, 60px) clamp(15px, 4vw, 30px);
+    gap: clamp(30px, 6vw, 50px);
+    align-items: flex-start;
   }
+  
   .about-title h1 {
-    font-size: 50px;
+    font-size: clamp(2rem, 10vw, 3rem);
     padding: 0;
+    text-align: left;
   }
+  
   .about-title img {
-    width: 130px;
-    right: -20px;
+    width: clamp(60px, 15vw, 100px);
+    right: -10px;
   }
+  
   .about-sections {
     flex-direction: column;
+    gap: clamp(30px, 6vw, 50px);
   }
-  .left {
+  
+  .about-sections .left {
     display: none;
   }
+  
+  .right {
+    gap: clamp(25px, 5vw, 40px);
+  }
+  
   .para {
-    font-size: 18px;
-    line-height: 32px;
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    line-height: 1.5;
   }
+  
+  .about-skill {
+    gap: clamp(15px, 3vw, 25px);
+    padding: 10px;
+  }
+  
   .about-skill p {
-    font-size: 20px;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    min-width: 100px;
   }
-  .about-skill hr {
-    height: 6x;
-  }
+  
   .about-achievements {
-    justify-content: space-between;
+    grid-template-columns: 1fr;
+    gap: clamp(15px, 3vw, 25px);
   }
+  
   .about-achievment {
-    gap: 10px;
+    padding: clamp(15px, 3vw, 25px);
   }
+  
   .about-achievment h1 {
-    font-size: 34px;
-    font-weight: 700;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
   }
+  
   .about-achievment p {
-    text-align: center;
-    font-size: 16px;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .about {
+    padding: 30px 15px;
+    gap: 25px;
+  }
+  
+  .about-title h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-title img {
+    width: 50px;
+    right: -5px;
+  }
+  
+  .para {
+    font-size: 0.9rem;
+  }
+  
+  .about-skill p {
+    font-size: 0.9rem;
+    min-width: 80px;
+  }
+  
+  .about-achievment h1 {
+    font-size: 1.6rem;
+  }
+  
+  .about-achievment p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+  .about {
+    padding: 100px 200px;
+    gap: 100px;
+  }
+  
+  .about-title h1 {
+    font-size: 6rem;
+  }
+  
+  .about-sections {
+    gap: 100px;
+  }
+  
+  .about-sections .left img {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .right {
+    gap: 100px;
+  }
+  
+  .para {
+    font-size: 1.6rem;
+  }
+  
+  .about-skill p {
+    font-size: 1.6rem;
+    min-width: 180px;
+  }
+  
+  .about-achievment h1 {
+    font-size: 4rem;
+  }
+  
+  .about-achievment p {
+    font-size: 1.4rem;
+  }
+}
+
+/* Landscape Mobile Styles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .about {
+    padding: 40px 20px;
+    gap: 30px;
+    min-height: auto;
+  }
+  
+  .about-sections {
+    flex-direction: row;
+    gap: 30px;
+  }
+  
+  .about-sections .left {
+    display: block;
+  }
+  
+  .about-sections .left img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .about-achievements {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

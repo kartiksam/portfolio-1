@@ -1,10 +1,118 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  height: 100vh;
+  min-height: 100vh;
   background: #161513;
   color: white;
-  font-family: "outfit";
+  font-family: "outfit", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Responsive typography */
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* Container for consistent max-width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Utility classes for responsive spacing */
+.section-padding {
+  padding: clamp(40px, 8vw, 80px) 0;
+}
+
+.section-margin {
+  margin: clamp(40px, 8vw, 80px) 0;
+}
+
+/* Responsive grid system */
+.grid {
+  display: grid;
+  gap: clamp(20px, 4vw, 40px);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Responsive flexbox utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Responsive spacing utilities */
+.gap-sm { gap: clamp(10px, 2vw, 20px); }
+.gap-md { gap: clamp(20px, 4vw, 40px); }
+.gap-lg { gap: clamp(40px, 6vw, 80px); }
+
+/* Hide elements on specific screen sizes */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hide-tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hide-desktop {
+    display: none !important;
+  }
 }

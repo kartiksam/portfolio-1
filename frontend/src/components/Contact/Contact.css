@@ -3,230 +3,352 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 80px;
-  margin: 80px 170px;
+  gap: clamp(40px, 8vw, 80px);
+  padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 170px);
+  min-height: 100vh;
 }
+
 .contact-title {
   position: relative;
+  text-align: center;
+  width: 100%;
 }
+
 .contact-title h1 {
-  padding: 0px 30px;
-  font-size: 80px;
-  font-weight: 500;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  margin: 0;
+  padding: 0 clamp(10px, 2vw, 30px);
+  line-height: 1.2;
 }
+
 .contact-title img {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -10px;
+  right: clamp(-20px, -3vw, 0px);
   z-index: -1;
+  width: clamp(80px, 15vw, 150px);
+  height: auto;
 }
 
 .contact-section {
   display: flex;
-  gap: 150px;
+  gap: clamp(50px, 10vw, 150px);
+  width: 100%;
+  max-width: 1200px;
+  align-items: flex-start;
 }
+
 .about-left {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  margin-left: auto;
+  gap: clamp(20px, 4vw, 40px);
+  flex: 1;
 }
+
 .about-left h1 {
-  font-size: 60px;
-  font-weight: 500;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 600;
+  margin: 0;
   background: linear-gradient(270deg, #da7c25 80%, #b923e1 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.2;
 }
+
 .about-left p {
-  max-width: 550px;
+  max-width: clamp(300px, 60vw, 550px);
   color: #d8d8d8;
-  font-size: 15px;
-  line-height: 30px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  margin: 0;
 }
+
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: clamp(20px, 4vw, 40px);
   color: white;
-  font-size: 18px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
 }
+
 .contact-detail {
   display: flex;
-  gap: 30px;
+  gap: clamp(15px, 3vw, 30px);
+  align-items: center;
+  transition: all 0.3s ease;
+  padding: clamp(10px, 2vw, 20px);
+  border-radius: 10px;
 }
+
+.contact-detail:hover {
+  background: rgba(223, 137, 8, 0.1);
+  transform: translateX(10px);
+}
+
+.contact-detail img {
+  width: clamp(20px, 3vw, 25px);
+  height: auto;
+}
+
 .about-right {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: clamp(20px, 4vw, 40px);
+  flex: 1;
+  max-width: clamp(300px, 60vw, 500px);
 }
+
 .about-right label {
   color: #d8d8d8;
-  font-size: 22px;
-  font-weight: 450;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 500;
+  margin: 0;
 }
-.about-right input {
-  border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
-  background: #32323c;
-  color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
-}
+
+.about-right input,
 .about-right textarea {
   border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
+  width: 100%;
+  height: clamp(50px, 8vw, 78px);
+  padding: clamp(10px, 2vw, 20px);
+  border-radius: 8px;
   background: #32323c;
   color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
-  border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
-  background: #32323c;
-  color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
-  border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
-  background: #32323c;
-  color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
-  border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
-  background: #32323c;
-  color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
-  border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
-  background: #32323c;
-  color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
-  border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
-  background: #32323c;
-  color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
-  border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
-  background: #32323c;
-  color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
-  border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
-  background: #32323c;
-  color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
-  border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
-  background: #32323c;
-  color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
-  border: none;
-  width: 500px;
-  height: 78px;
-  padding-left: 20%;
-  border-radius: 4px;
-  background: #32323c;
-  color: #a0a0a0;
-  font-family: Outfit;
-  font-size: 20px;
+  font-family: Outfit, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
+
+.about-right input:focus,
+.about-right textarea:focus {
+  outline: none;
+  border: 2px solid #df8908;
+  background: #2a2a34;
+  color: white;
+}
+
+.about-right textarea {
+  height: clamp(100px, 15vw, 150px);
+  resize: vertical;
+  min-height: 100px;
+}
+
 .contact-submit {
   border: none;
   color: white;
   border-radius: 50px;
   background: linear-gradient(270deg, #da7c25 80%, #b923e1 100%);
-  font-size: 20px;
-  padding: 20px 60px;
-  margin-bottom: 50px;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 600;
+  padding: clamp(15px, 3vw, 25px) clamp(30px, 6vw, 60px);
+  margin-top: clamp(20px, 4vw, 40px);
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  width: fit-content;
+  align-self: flex-start;
 }
+
 .contact-submit:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(218, 124, 37, 0.3);
 }
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .contact {
+    padding: clamp(50px, 8vw, 70px) clamp(30px, 6vw, 80px);
+  }
+  
+  .contact-section {
+    gap: 60px;
+  }
+  
+  .about-left h1 {
+    font-size: 2.5rem;
+  }
+  
+  .about-right {
+    max-width: 400px;
+  }
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .contact {
-    gap: 50px;
-    margin: 50px 70px;
-    align-items: start;
+    padding: clamp(40px, 8vw, 60px) clamp(15px, 4vw, 30px);
+    gap: clamp(30px, 6vw, 50px);
+    align-items: flex-start;
   }
+  
   .contact-title h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
     padding: 0;
-    font-size: 50px;
-    font-weight: 600;
+    text-align: left;
   }
+  
   .contact-title img {
-    width: 130px;
-    margin-right: -20px;
+    width: clamp(60px, 15vw, 100px);
+    right: -10px;
   }
+  
   .contact-section {
     flex-direction: column;
+    gap: clamp(30px, 6vw, 50px);
   }
+  
+  .about-left {
+    gap: clamp(15px, 3vw, 25px);
+  }
+  
   .about-left h1 {
-    font-size: 54px;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
   }
+  
   .about-left p {
-    font-size: 18px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
   }
+  
   .contact-details {
-    gap: 20px;
+    gap: clamp(15px, 3vw, 25px);
   }
+  
+  .contact-detail {
+    gap: clamp(10px, 2vw, 20px);
+    padding: 10px;
+  }
+  
   .contact-detail img {
-    width: 25px;
+    width: 20px;
   }
+  
+  .about-right {
+    gap: clamp(15px, 3vw, 25px);
+    max-width: 100%;
+  }
+  
   .about-right label {
-    font-size: 20px;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
   }
-  .about-right input {
-    width: 100%;
-    font-size: 20px;
-  }
+  
+  .about-right input,
   .about-right textarea {
-    width: 95%;
-    font-size: 20px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
   }
+  
   .contact-submit {
-    font-size: 20px;
-    padding: 15px 40px;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    padding: clamp(12px, 3vw, 18px) clamp(25px, 5vw, 40px);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .contact {
+    padding: 30px 15px;
+    gap: 25px;
+  }
+  
+  .contact-title h1 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-title img {
+    width: 50px;
+    right: -5px;
+  }
+  
+  .about-left h1 {
+    font-size: 1.6rem;
+  }
+  
+  .about-left p {
+    font-size: 0.9rem;
+  }
+  
+  .contact-detail {
+    font-size: 0.9rem;
+  }
+  
+  .about-right label {
+    font-size: 0.9rem;
+  }
+  
+  .about-right input,
+  .about-right textarea {
+    font-size: 0.9rem;
+  }
+  
+  .contact-submit {
+    font-size: 0.9rem;
+    padding: 12px 25px;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+  .contact {
+    padding: 100px 200px;
+    gap: 100px;
+  }
+  
+  .contact-title h1 {
+    font-size: 6rem;
+  }
+  
+  .contact-section {
+    gap: 180px;
+  }
+  
+  .about-left h1 {
+    font-size: 4rem;
+  }
+  
+  .about-left p {
+    font-size: 1.3rem;
+  }
+  
+  .contact-details {
+    font-size: 1.3rem;
+  }
+  
+  .about-right label {
+    font-size: 1.5rem;
+  }
+  
+  .about-right input,
+  .about-right textarea {
+    font-size: 1.3rem;
+  }
+  
+  .contact-submit {
+    font-size: 1.5rem;
+    padding: 30px 70px;
+  }
+}
+
+/* Landscape Mobile Styles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .contact {
+    padding: 40px 20px;
+    gap: 30px;
+    min-height: auto;
+  }
+  
+  .contact-section {
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  .about-left h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-right {
+    max-width: 300px;
   }
 }

@@ -1,97 +1,228 @@
-.small-logo {
-  width: 300px; /* Greater width */
-  height: 50px; /* Smaller height */
-  object-fit: contain; /* Ensures responsiveness */
-}
-
 .navbar {
   display: flex;
-  /* list items comes one by one below becz dipslay flex apply to only img ul and btn to make them horizontal use flex */
   align-items: center;
   justify-content: space-between;
-  margin: 20px 170px;
+  padding: clamp(15px, 3vw, 30px) clamp(20px, 5vw, 170px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(22, 21, 19, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
-/* for all menus */
+
+.small-logo {
+  width: clamp(200px, 25vw, 300px);
+  height: clamp(35px, 5vw, 50px);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.small-logo:hover {
+  transform: scale(1.05);
+}
+
 .menu {
   display: flex;
-  gap: 60px;
+  gap: clamp(30px, 4vw, 60px);
   list-style: none;
-  font-size: 15px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
-.menu p {
-  cursor: pointer;
-}
-/* for img and text */
+
 .menu li {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
+  position: relative;
 }
+
+.menu p {
+  cursor: pointer;
+  font-size: clamp(14px, 2vw, 15px);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.menu p:hover {
+  color: #df8908;
+}
+
 .menu li img {
-  display: flex;
-  margin: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
 }
+
+.anchor-link {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.anchor-link:hover {
+  color: #df8908;
+}
+
 .btn {
-  padding: 20px 40px;
+  padding: clamp(15px, 2.5vw, 20px) clamp(25px, 4vw, 40px);
   border-radius: 50px;
   background: linear-gradient(267deg, #da7c25 0.36%, #b923e1 10%);
-  font-size: 10px;
-  transition: 0.5s;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 500;
+  transition: all 0.3s ease;
   cursor: pointer;
+  border: none;
+  color: white;
+  white-space: nowrap;
 }
 
 .btn:hover {
   transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(218, 124, 37, 0.3);
 }
-.anchor-link {
-  text-decoration: none;
-  color: white;
-}
-.nav-mob-close {
-  display: none;
-}
+
+.nav-mob-close,
 .nav-mob-open {
   display: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-/* routing can be done using k=link to or scrolling */
+
+.nav-mob-open:hover,
+.nav-mob-close:hover {
+  transform: scale(1.1);
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .navbar {
+    padding: 20px clamp(30px, 8vw, 80px);
+  }
+  
+  .menu {
+    gap: clamp(20px, 3vw, 40px);
+  }
+  
+  .btn {
+    padding: 15px 25px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .navbar {
-    margin: 20px 50px;
+    padding: 15px 20px;
   }
+  
   .btn {
     display: none;
   }
+  
   .nav-mob-open {
     display: block;
-    position: fixed;
-    right: 30px;
-    cursor: pointer;
+    width: 30px;
+    height: 30px;
   }
+  
   .nav-mob-close {
     display: block;
     position: absolute;
     top: 20px;
     right: 20px;
     width: 30px;
-    cursor: pointer;
+    height: 30px;
+    z-index: 1001;
   }
+  
   .menu {
     position: fixed;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     top: 0;
-    gap: 30px;
-    background-color: #1f0016;
-    width: 350px;
-    height: 100%;
-    z-index: 2;
-    transition: right 0.5s;
-    right: -350px;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #1f0016 0%, #161513 100%);
+    gap: clamp(25px, 6vw, 40px);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
   }
+  
+  .menu.active {
+    right: 0;
+  }
+  
   .menu li {
-    font-size: 30px;
-    padding-left: 0;
+    font-size: clamp(24px, 6vw, 32px);
+    padding: 10px 0;
     flex-direction: row;
-    gap: 20px;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .menu p {
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 600;
+  }
+  
+  .menu li img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+  
+  .small-logo {
+    width: 180px;
+    height: 30px;
+  }
+  
+  .nav-mob-open,
+  .nav-mob-close {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .menu {
+    gap: 30px;
+  }
+  
+  .menu li {
+    font-size: 24px;
+  }
+  
+  .menu p {
+    font-size: 22px;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+  .navbar {
+    padding: 30px 200px;
+  }
+  
+  .menu {
+    gap: 70px;
+  }
+  
+  .btn {
+    padding: 25px 50px;
+    font-size: 16px;
   }
 }
